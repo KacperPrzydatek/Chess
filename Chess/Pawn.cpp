@@ -18,11 +18,14 @@ Pawn::~Pawn()
 #endif
 }
 
-void Move(Square as)
+void Move(Square start, Square destination, std::string actualPlayer)
 {
-
+	if (destination._name_horizontal - start._name_horizontal != 0)
+		std::cout << "Huston, problem, zalataj problem." << std::endl << "Pawn.cpp, Move";
+	if (destination._name_vertical - start._name_vertical != 1)
+		std::cout << "Huston, problem, zalataj problem." << std::endl << "Pawn.cpp, Move";
 }
-void Capture()
+void Capture(Square start, Square destination, std::string actualPlayer)
 {
 
 }

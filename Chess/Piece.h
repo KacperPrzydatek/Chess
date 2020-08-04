@@ -1,13 +1,13 @@
 #pragma once
 #include "Global.h"
-
+#include "Square.h"
 class Piece
 {
 	std::string _name;
-	bool _colour; //0 - bialy; 1- czarny
+	std::string _colour;
 public:
 	friend std::ostream& operator<<(std::ostream& os, const Piece& piece);
-	virtual void Move();
-	virtual void Capture();
+	virtual void Move(Square start, Square destination, std::string actualPlayer);
+	virtual void Capture(Square start, Square destination, std::string actualPlayer);
 };
 

@@ -8,7 +8,7 @@ class Pawn :
 public:
 	Pawn(bool colour);
 	~Pawn();
-	virtual void Move() override;
-	virtual void Capture() override;
+	virtual void Move(Square start, Square destination, std::string actualPlayer) override;
+	virtual void Capture(Square start, Square destination, std::string actualPlayer) override;
 };
 
