@@ -2,10 +2,11 @@
 
 
 
-Square::Square(std::string nameh, std::string namev)
+Square::Square(short int nameh, short int namev)
+	:_name_horizontal(nameh),_name_vertical(namev)
 {
-	_name_horizontal = nameh;
-	_name_vertical = namev;
+	if (nameh < 1 || nameh>8 || namev < 1 || namev>8)
+		std::cout << "Tworzysz plansze inna od podstawowej. Komunikat Square.cpp, konstruktor";
 	_occupiedByBlack = 0;
 	_occupiedByWhite = 0;
 }
