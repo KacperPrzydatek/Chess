@@ -15,9 +15,9 @@ public:
 
 	Square(short int nameh, short int namev);
 	~Square();
-	void AddPiece(Piece piece, std::string* actualPlayer);
-	Piece MovePieceAway(std::string* actualPlayer);
-	void MovePieceInto(Piece* piece, std::string* actualPlayer);
+	void AddPiece(Piece piece, std::string& actualPlayer);
+	Piece MovePieceAway(std::string& actualPlayer);
+	void MovePieceInto(Piece* piece, std::string& actualPlayer);
 	bool MovePieceThrought();
 	std::string Owner();
 
