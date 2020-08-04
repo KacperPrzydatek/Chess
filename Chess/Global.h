@@ -1,7 +1,13 @@
 #pragma once
 #include <iostream>
 
-bool actualPlayer = 0; //0 - white; 1 - black
+void ChangePlayer(std::string& actualPlayer)
+{
+	if (actualPlayer == "white")
+		actualPlayer = "black";
+	else
+		actualPlayer = "white";
+}
 
 //ZLE. Zrob fcje player
 //colour/player - "white"/"black"
