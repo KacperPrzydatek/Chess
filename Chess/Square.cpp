@@ -11,18 +11,18 @@ Square::Square(short int nameh, short int namev)
 	_occupiedByWhite = 0;
 }
 
-void Square::AddPiece(Piece piece, std::string colour)
+void Square::AddPiece(Piece piece, std::string* colour)
 {
 	if (_occupiedByBlack == 1 || _occupiedByWhite == 1)
 		std::cout << "Pole jest juz zajete. Pole nie ulegnie aktualizacji.";
 	else
 	{
-		if (colour == "white")
+		if (*colour == "white")
 		{
 			_occupiedByWhite = 1;
 			_piece = &piece;
 		}
-		else if (colour == "black")
+		else if (*colour == "black")
 		{
 			_occupiedByBlack = 1;
 			_piece = &piece;
@@ -35,18 +35,18 @@ void Square::AddPiece(Piece piece, std::string colour)
 	
 }
 
-Piece Square::MovePieceAway(std::string actualPlayer)
+Piece Square::MovePieceAway(std::string* actualPlayer)
 {
-	if (_occupiedByWhite == 1 && actualPlayer == "white")
+	if (_occupiedByWhite == 1 && *actualPlayer == "white")
 	{
-		actualPlayer = "black";
+		*actualPlayer = "black";
 		_occupiedByWhite = 0;
 		return *_piece;
 		_piece = NULL;
 	}
-	else if (_occupiedByBlack == 1 && actualPlayer == "black")
+	else if (_occupiedByBlack == 1 && *actualPlayer == "black")
 	{
-		actualPlayer = "white";
+		*actualPlayer = "white";
 		_occupiedByBlack = 0;
 		return *_piece;
 		_piece = NULL;
@@ -56,18 +56,18 @@ Piece Square::MovePieceAway(std::string actualPlayer)
 		std::cout << "Proba przesuniecia bierki z pola na którym jej nie ma." << std::endl << "Square.cpp;MovePieceAway()";
 	}
 }
-void Square::MovePieceInto(Piece* piece, std::string actualPlayer)
+void Square::MovePieceInto(Piece* piece, std::string* actualPlayer)
 {
-	if (_occupiedByWhite == 1 && actualPlayer == "black") //bicie bialego przez czarnego
+	if (_occupiedByWhite == 1 && *actualPlayer == "black") //bicie bialego przez czarnego
 	{
-		actualPlayer = "white";
+		*actualPlayer = "white";
 		_occupiedByWhite = 0;
 		_occupiedByBlack = 1;
 		_piece = piece;
 	}
-	else if (_occupiedByBlack == 1 && actualPlayer == "white") //bicie czarnego przez bialego
+	else if (_occupiedByBlack == 1 && *actualPlayer == "white") //bicie czarnego przez bialego
 	{
-		actualPlayer = "black";
+		*actualPlayer = "black";
 		_occupiedByBlack = 0;
 		_occupiedByWhite = 1;
 		_piece = piece;
@@ -93,7 +93,6 @@ std::string Square::Owner()
 		return "black";
 	else
 		return "empty";
-)
 }
 
 Square::~Square()

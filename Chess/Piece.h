@@ -7,7 +7,7 @@ class Piece
 	std::string _colour;
 public:
 	friend std::ostream& operator<<(std::ostream& os, const Piece& piece);
-	virtual void Move(Square start, Square destination, std::string actualPlayer);
-	virtual void Capture(Square start, Square destination, std::string actualPlayer);
+	virtual void Move(Square start, Square destination, std::string* actualPlayer);
+	virtual void Capture(Square start, Square destination, std::string* actualPlayer);
 };
 
