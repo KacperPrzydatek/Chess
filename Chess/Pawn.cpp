@@ -1,6 +1,6 @@
 #include "Pawn.h"
 
-Pawn::Pawn(bool colour)
+Pawn::Pawn(std::string colour)
 	:_colour(colour), _name("Pawn")
 {
 #if _DEBUG
@@ -15,7 +15,7 @@ Pawn::~Pawn()
 #endif
 }
 
-void Move(Square start, Square destination, std::string actualPlayer)
+void Pawn::Move(Square start, Square destination, std::string& actualPlayer)
 {
 	if (start.Owner() != actualPlayer)
 	{
@@ -63,7 +63,7 @@ void Move(Square start, Square destination, std::string actualPlayer)
 	}
 	
 }
-void Capture(Square start, Square destination, std::string actualPlayer)
+void Pawn::Capture(Square start, Square destination, std::string& actualPlayer)
 {
 	if (start.Owner() != actualPlayer)
 	{

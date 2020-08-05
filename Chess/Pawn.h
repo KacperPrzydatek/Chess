@@ -4,9 +4,9 @@ class Pawn :
 	public Piece
 {
 	std::string _name;
-	bool _colour; //0 - bialy; 1- czarny
+	std::string _colour;
 public:
-	Pawn(bool colour);
+	Pawn(std::string colour);
 	~Pawn();
 	virtual void Move(Square start, Square destination, std::string& actualPlayer) override;
 	virtual void Capture(Square start, Square destination, std::string& actualPlayer) override;

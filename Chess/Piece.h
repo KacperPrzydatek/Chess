@@ -10,4 +10,3 @@ public:
 	virtual void Move(Square start, Square destination, std::string& actualPlayer);
 	virtual void Capture(Square start, Square destination, std::string& actualPlayer);
 };
-
