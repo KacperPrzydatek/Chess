@@ -1,6 +1,6 @@
 #include "Knight.h"
 Knight::Knight(std::string colour)
-	:_colour(colour), _name("Pawn")
+	:_colour(colour), _name("Knight")
 {
 #if _DEBUG
 	std::cout << "Konstrukcja obiektu typu Piece<Knight>" << std::endl;
@@ -43,5 +43,4 @@ void Knight::Move(Square start, Square destination, std::string& actualPlayer)
 			std::cout << "Przekroczono zasieg ruchu skoczka. Sprobuj innego ruchu." << std::endl;
 		}
 	}
-	
 }
